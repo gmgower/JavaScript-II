@@ -31,9 +31,8 @@ function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
   return cb(arr.length)
   }
-getLength(items, function (itemsLength) {
-  console.log(itemsLength)
-})
+getLength(items, (itemsLength) =>  console.log(itemsLength)
+)
 
 
 function last(arr, cb) {
@@ -42,9 +41,8 @@ function last(arr, cb) {
   // last passes the last item of the array into the callback.
   return cb(arr.length -1)
 }
-last(items, function (lastItem) {
-  console.log(lastItem);
-})
+last(items, (lastItem) =>  console.log(lastItem)
+)
 
 
 function sumNums(x, y, cb) {
@@ -58,7 +56,6 @@ function add(num1, num2) {
   return num1 + num2;
 }
 let addNums = sumNums(1, 2, add)
-
 console.log(addNums)
 
 
@@ -102,4 +99,7 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  items.filter(function (item, index, items) {
+    return items.index(item) >= index;
+  })
 }

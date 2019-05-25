@@ -1,7 +1,7 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 function airportAnnouncement() {
-   console.log('Good evening SouthWest travlers, Flight 2342 to Cancum, Mexico is on schedule to depart 8:35 am');
+   console.log('Good morning SouthWest travlers, Flight 2342 to Cancum, Mexico is on schedule to depart 8:35 am');
    let delay30 = '30 minuntes';
    let delayTime = '9:05 am';
   //  debugger;

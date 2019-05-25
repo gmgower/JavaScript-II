@@ -35,15 +35,17 @@ getLength(items, function (itemsLength) {
   console.log(itemsLength)
 })
 
+
 function last(arr, cb) {
   // arr = items array
   // cb = function
   // last passes the last item of the array into the callback.
-  return cb(arr.pop())
+  return cb(arr.length -1)
 }
 last(items, function (lastItem) {
   console.log(lastItem);
 })
+
 
 function sumNums(x, y, cb) {
   // x = 1
@@ -59,6 +61,7 @@ let addNums = sumNums(1, 2, add)
 
 console.log(addNums)
 
+
 function multiplyNums(x, y, cb) {
     // x = 3
     // y = 4
@@ -72,21 +75,25 @@ function multiply(num3, num4) {
 let multiplyNum = multiplyNums(3, 4, multiply);
 console.log(multiplyNum);
 
+
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-   for (let i = 0; i < list.length; i++) {
-     if (list[i] === item) {
-       return cb(true);
-     } else {
-       return cb(false);
-     }
-   }
+  for (i = 0; i < list.length; i++) {
+    if (list[i] === item) {
+      return cb(true)
+    }     
   }
-  function containItem(item) {
-    console.log(item)
-  }
-  contains('pen', items, containItem )
+      return cb(false);
+}
+  // function containItem(itemContain) {
+  //   console.log(itemContain)
+  // }
+  // contains('pen', items, containItem )
+
+contains("Gum", items, containsItem => console.log(containsItem));
+contains("Pen", items, containsItem => console.log(containsItem));
+
 
 
 /* STRETCH PROBLEM */

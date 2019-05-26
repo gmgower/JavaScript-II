@@ -127,7 +127,7 @@ average = runners.reduce(function (donation, runner, index, runners) {
 console.log(average)
 
 // Problem 3
-// Director sober up and request to lowercase name 
+// Director sober up and request to lowercase name s
 let lowerCaps = [];
 lowerCaps = runners.map(function (runner, index, runners) {
   return runner.first_name.toLowerCase()

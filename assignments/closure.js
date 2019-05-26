@@ -20,8 +20,22 @@ function airportAnnouncement() {
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
-  // Return a function that when invoked increments and returns a counter variable.
+  // Return a function that when invoked increments and returns a counter variable.c
+  let counter = 0;
+  let myCounter = function() {
+    counter = counter + 1
+    return counter
+  }
+  return myCounter
 };
+const newCounter = counter()
+// const counter1 = newCounter();
+// const counter2 = newCounter();
+// const counter3 = newCounter();
+// console.log(counter1, counter2, counter3)
+console.log(newCounter())
+console.log(newCounter())
+console.log(newCounter())
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2
@@ -32,3 +46,4 @@ const counterFactory = () => {
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
 };
+

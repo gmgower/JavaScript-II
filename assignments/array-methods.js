@@ -97,8 +97,8 @@ console.log(largeShirts);
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-ticketPriceTotal = runners.reduce(function (donation, animal, index, animals) {
-  return donation += animal.donation
+ticketPriceTotal = runners.reduce(function (donation, runner, index, runners) {
+  return donation += runner.donation
 }, 0)
 console.log(ticketPriceTotal);
 
@@ -106,7 +106,31 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Director has directed her assistance to call runners who have donated less the $50. You are to provide the assistance their full name, donation, and email. 
+let requestMoreDonation = []
 
+requestMoreDonation = runners.filter((runner, index, runners) =>  runner.donation < 50)
+
+let donationPersonalInfo = []
+
+requestMoreDonation.forEach((item) => {
+donationPersonalInfo.push(`Full Name: ${item.first_name} ${item.last_name}, Amount Donated: ${item.donation}, Email: ${item.email}`)
+})
+
+console.log(donationPersonalInfo)
 // Problem 2
+// Director request average dollar amout of donation.
+let  average = []
+average = runners.reduce(function (donation, runner, index, runners) {
+  return donation += runner.donation / runners.length;  
+}, 0)
+console.log(average)
 
 // Problem 3
+// Director sober up and request to lowercase name 
+let lowerCaps = [];
+lowerCaps = runners.map(function (runner, index, runners) {
+  return runner.first_name.toLowerCase()
+})
+
+console.log(lowerCaps);
